@@ -322,7 +322,7 @@ AC_LINK_IFELSE(
    [AC_MSG_RESULT([32-bit])]
 )
 
-if test "x${CPU_BITS}" = x-m64 ; then
+if test "x${CPU_BITS}" = x-m64 && test "x${cross_compiling}" != xyes ; then
   JTR_SET_64_INCLUDES
 fi
 
