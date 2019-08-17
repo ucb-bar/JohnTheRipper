@@ -591,7 +591,7 @@ AS_IF([test "x$with_commoncrypto" = xyes],
       [AC_CHECK_LIB([System], [CCCryptorCreate], [JTR_LIST_ADD(CFLAGS,"-DCOMMON_DIGEST_FOR_OPENSSL")] [AC_SUBST(COMMONCRYPTO_LIBS, [-lSystem])] [AC_DEFINE(HAVE_COMMONCRYPTO,1,[Define to 1 if you have the CommonCrypto library.])], [AC_MSG_FAILURE([No CommonCrypto found],1)] )] )] )] )
 
 AS_IF([test "x$with_openssl" != xno],
-   [if test "x$enable_native_tests" != xno -a "x$PKG_CONFIG" != xno; then
+   [if test "x$PKG_CONFIG" != xno; then
    PKG_CHECK_MODULES([OPENSSL], [openssl],
       AC_DEFINE(HAVE_LIBCRYPTO,1,[Define to 1 if you have the `crypto' library (-lcrypto).])
          AC_DEFINE(HAVE_LIBSSL,1,[Define to 1 if you have the `ssl' library (-lssl).]),

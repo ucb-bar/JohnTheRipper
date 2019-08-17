@@ -12177,7 +12177,7 @@ fi
 fi
 
 if test "x$with_openssl" != xno; then :
-  if test "x$enable_native_tests" != xno -a "x$PKG_CONFIG" != xno; then
+  if test "x$PKG_CONFIG" != xno; then
 
 pkg_failed=no
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for OPENSSL" >&5
