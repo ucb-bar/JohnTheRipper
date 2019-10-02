@@ -791,6 +791,10 @@ void do_incremental_crack(struct db_main *db, const char *mode)
 	entry--;
 	while (ptr < &header->order[sizeof(header->order) - 1]) {
 		int skip = 0;
+
+		if (options.verbosity > VERB_DEFAULT)
+			status_print();
+
 		if (options.node_count) {
 			int for_node = entry % options.node_count + 1;
 			skip = for_node < options.node_min ||
